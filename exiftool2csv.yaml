@@ -1,0 +1,20 @@
+name: EXIFTool to CSV
+command: "exiftool -r -csv {{SourceFolderPath}} >{{DestinationCSVPath}} {{Tags}}"
+tags:
+  - shell
+description: Recursively output metadata of files to CSV using EXIFTool
+arguments:
+  - name: SourceFolderPath 
+    description: Where the Source Folder is located.
+    default_value: ~
+  - name: DestinationCSVPath
+    description: Path to save CSV
+    default_value: ~
+  - name: Tags
+    description: Tags to output
+    default_value: -BaseName -FileSize -ImageWidth -ImageHeight -IPTCPixelWidth -IPTCPixelHeight -JPEGQualityEstimate -DigitalCreationDate -DateTimeOriginal -Make -Model -ExposureTime -FNumber -ISO -ApertureValue -LensModel -GPSLatitude -GPSLongitude -Sub-location -City -Province -State -Country -PrimaryLocationName -Event -People -Caption-Abstract -Description -Keywords
+author: Tony Knight
+author_url: "https://github.com/tonyknight/warp-workflow-EXIFTOOLtoCSV"
+shells:
+  - Zsh
+  - Bash
